@@ -21,7 +21,7 @@ enum HealthMetrixContext: CaseIterable, Identifiable {
     }
 }
 
-struct ContentView: View {
+struct DashboardView: View {
     @State private var selectedStat: HealthMetrixContext = .steps
     var isSteps: Bool { selectedStat == .steps }
     var body: some View {
@@ -86,7 +86,7 @@ struct ContentView: View {
             .padding()
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetrixContext.self){ metric in
-                Text(metric.title)
+                HealthDataListView(metric: metric)
                 
             }
         }
@@ -95,5 +95,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DashboardView()
 }
