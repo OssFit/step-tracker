@@ -45,7 +45,6 @@ struct HealthDataListView: View {
                         .frame(width: 140)
                         .keyboardType(isMetric ? .numberPad : .decimalPad)
                 }
-               
             }
             .navigationTitle(metric.title)
             .toolbar{
